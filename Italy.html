@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Trip to Italy</title>
+        <style>
+            body{
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                background-color: beige;
+                color:rgb(7, 54, 7);
+            }
+            #img_swap{
+                max-width: 90%;
+                height: 180pt;
+                border: 5pt solid black;
+            }
+            ul,li,p{margin:0;padding:0;}
+            nav ul {
+                text-align: center;
+
+            }
+            
+            header nav ul{
+                list-style-type: none;
+                
+            }
+            a:link{
+               
+                padding: 10px 20px;
+                text-decoration: none;
+            }
+            header nav ul>li {
+                display: inline-block;
+                width: 15%;
+                border: 2px solid red;
+                background-color: red;;
+                
+            }
+            header {
+                width: 100%; 
+                height: 30vh; 
+                background-color: rgb(28, 104, 45);
+                background-image: url("background.jpg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                
+            }
+            header h1 {
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    font-size: 5rem;
+                    text-align: center;
+                    
+                    
+                    text-shadow: 5px 5px black;
+                    text-shadow: 2px 2px white;
+
+            }
+           
+            header nav a:link{color: white;}
+            header nav a:visited {color: black;}
+            header nav a:hover {color: rgb(28, 104, 45);}
+            .gallery{ 
+                display: grid; 
+                grid-template-columns: repeat(auto-fill, minmax(200px, 2fr)); 
+                grid-auto-rows: .5fr; 
+                grid-gap: 1em; 
+                /*"dense" packing algorithm attempts to fill in holes earlier in the grid, if smaller items come up later. */
+                grid-auto-flow: dense;
+            } 
+            .gallery > figure{ 
+                margin: 0; 
+                /*setup a flex container*/ 
+                display: flex; 
+                flex-direction: column; 
+            } 
+            
+            .gallery img{ 
+                /*avoid overfloat*/
+                max-width: 100%; 
+                /*flexing the img as the flex item*/ 
+                flex: 1; 
+                object-fit: cover; 
+            } 
+            
+            .gallery figcaption{ 
+                padding: .3em .8em; 
+                background-color: rgba(0, 0, 0, .5); 
+                color: white; 
+                text-align: right; 
+            } 
+        </style>
+        <script>
+            let time=setInterval(rotateImages,3000);
+            function rotateImages(){
+                let randImage=Math.floor(Math.random()*6)+1;
+                document.getElementById("img_swap").src=randImage+".jpg";
+            }
+        </script>
+    </head>
+    <body>
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="https://www.costcotravel.com/Vacation-Packages/Europe/Italy">Packages</a></li>
+                    <li><a href="https://www.goaheadtours.com/tours/europe-tours/italy-tours">Tours</a></li>
+                    <li><a href="https://www.italyweloveyou.com/best-restaurants-in-italy/">Resturants</a></li>
+                    <li><a href="https://www.oliverstravels.com/blog/top-10-must-visit-historical-sites-in-italy/">Sites</a></li>
+                    
+                </ul>
+            </nav>
+            <h1><span style="color:#FF0000">I</span>
+                <span style="color:#66CC66">T</span>
+                <span style="color:white">A</span>
+                <span style="color:green">L</span>
+                <span style="color:red">Y</span></h1>
+        </header>
+        <h2>Top Destinations</h2>
+        <h3>Rome</h3>
+        <p>Rome is a must-see destination and a common stop on many European travel itineraries.
+            The city is an important center of culture and history in the world.
+            The most significant Roman artifact can be found here (the Colosseum),
+            The best cuisine in Italy (Rome is home to numerous Michelin-starred restaurants), some of Michelangelo's greatest creations (in the Sistine Chapel), and, of course, the heart of Catholicism (the Vatican).
+        </p>
+        <h3>Venice</h3>
+        <p>Few places in the world are as wonderful as Venice.
+            Its distinctiveness is partly due to the city's network of canals, which function as highways and transport buses and water taxis in addition to its famed gondola fleet.
+            As a result, there is a noticeable commotion here that can startle some visitors.
+            Away from the crowded Grand Canal and Piazza San Marco, look for the smaller streets and canals for a tranquil holiday in Venice.
+        </p>
+        <h3>Amalfi Coast</h3>
+        <p>It takes some effort to get to the cliff-side Amalfi Coast, but vacationers say the trip is well worth it.
+            13 vibrant beach communities with individual histories may be found along the area's more than twenty miles of shoreline.
+            The two most well-known, Positano and Amalfi, both have a large number of hotels and eateries.
+            While here, go hiking, unwind on the beach, and indulge in as much food as you like (there are multiple Michelin-starred restaurants in this region)
+        </p>
+        <h3>Florence</h3>
+        <p>Despite being the complete antithesis of small-town Italy, Florence has a feeling of it.
+             Florence, which is located in the magnificent Tuscan valley, 
+             is surrounded by charming roads that lead to lovely piazzas of different sizes. 
+             As you take in the beauty of the city, be sure to visit the Piazza del Duomo, home of the magnificent church with the same name, 
+             and the charming Ponte Vecchio, which looks out over the Arno River, ideally after sunset. 
+        </p>
+        <h3>Capri</h3>
+        <p>Due to its stunning surroundings, this little island in southern Italy has drawn many notable people throughout the years, 
+            including emperors and Hollywood stars. The Faraglioni rock formations and the Blue Grotto, 
+            where sunlight transforms the sea into an unbelievable brilliant shade of blue, 
+            are two of Capri's most stunning sites that are best experienced by boat. 
+            More breathtaking vistas may be seen on property at Villa Jovis, which was formerly home to Roman emperor Tiberius, 
+            and the Gardens of Augustus. Additionally, travelers may discover upscale stores and eateries in the town center.
+        </p>
+        <figure>
+            <img id="img_swap" src="default.jpg" alt="Italy Popular Desitiantions">
+        </figure>
+        <h2>Popular Italian Dishes</h2>
+            <h3>Risotto</h3>
+            <p>A popular northern Italian meal with countless preparation options is risotto. 
+                It is made using northern-style rice, such as the Arborio, Carnaroli, and Vialone kinds, 
+                and is carefully cooked in broth to create a creamy, cheese-rich dish.
+            </p>
+        
+            <h3>Pizza</h3>
+            <p>Speaking of Italian cuisine always brings up the topic of pizza, a dish that serves as both a national emblem and a global representation of Italy. 
+                UNESCO has designated pizza as an Intangible Cultural Heritage of Humanity.Every pizza maker has their own techniques, 
+                and each of the flour, water, brewer's yeast, and salt pizzas can have a variety of toppings or fillings added to it.
+            </p>
+        
+            <h3>Pasta</h3>
+            <p>Pasta is another another emblem, a beloved global icon and national dish. 
+                Originating in Sicily, it quickly spread its production to other coastal areas with ports and favorable weather for the product's drying. 
+                Naples and Imperia are two of the most well-known cities. However, Rome developed into the spaghetti center, 
+                and it was here that "spaghetti alla carbonara" became famous. 
+                It was created practically by accident by a young Bologna cook who combined bacon with egg yolk, milk, cream, and cheese.
+            </p>
+            
+            <h3>Gnocchi</h3>
+            <p> Gnocchi are small rounds of potato dough. Each region has its own variation, but the most typical ingredients are cheese, spinach, eggs, and a variety of sauces.</p><br>  
+            <div class="gallery">
+               <figure><img src="spaghetti.jpg" alt="pumpkin"><figcaption>Italian Spaghetti with Shrimp</figcaption></figure>
+               <figure><img src="pasta.jpg" alt="pumpkin"><figcaption>Italian Pasta with the Red Sauce</figcaption></figure>
+               <figure><img src="pizza.jpg" alt="pumpkin"><figcaption>Italian Margharita Pizza</figcaption></figure>
+               <figure><img src="gnocchi.jpg" alt="pumpkin"><figcaption>Gnocchi with Parmessan Cheese</figcaption></figure>
+               
+            </div>
+            <footer>
+                <p><br>Hiva Hakimzadeh 11/10/2022<br></p>
+            </footer>  
+    </body>
+    
+</html>
